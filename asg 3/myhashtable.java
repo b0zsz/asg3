@@ -5,12 +5,14 @@ public class MyHashTable <K,V>
         private K key;
         private V val;
         private HashNode<K,V> next;
-        public HashNode(K key, V val){
+        public HashNode(K key, V val)
+        {
             this.key = key;
             this.val = val;
         }
         @override
-        public String toString(){
+        public String toString()
+        {
             return "{" + key + " " + val + '}';
         }
     }
