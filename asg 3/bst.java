@@ -1,4 +1,5 @@
-public class BST <K extends Comparable<K> ,V>{
+public class BST <K extends Comparable<K> ,V>
+{
     private Node root;
     private class Node
     {
@@ -17,15 +18,19 @@ public class BST <K extends Comparable<K> ,V>{
         root = put(root, key, val);
     }
 
-    private Node put(Node root, K key, V val){
-        if(root == null){
+    private Node put(Node root, K key, V val)
+    {
+        if(root == null)
+        {
             root = new node(key, val);
             return root;
         }
-        if(key < root.key){
+        if(key < root.key)
+        {
             root.left = put(root.left, key, val);
         }
-        else if(key > root.key){
+        else if(key > root.key)
+        {
             root.right = put(root.right, key, val);
         }
         return root;
@@ -35,14 +40,18 @@ public class BST <K extends Comparable<K> ,V>{
     {
         return get(root, key);
     }
-    private V get(Node root, K key){
-        if(root == null){
+    private V get(Node root, K key)
+    {
+        if(root == null)
+        {
             return null;
         }
-        if(root.key == key){
+        if(root.key == key)
+        {
             return root.val;
         }
-        if(root.key > key){
+        if(root.key > key)
+        {
             return get(root.left, key);
         }
         return get(root.right, key);
@@ -52,22 +61,28 @@ public class BST <K extends Comparable<K> ,V>{
     {
         delete(root, key);
     }
-    private Node delete(Node root, K key){
-        if(root == null){
+    private Node delete(Node root, K key)
+    {
+        if(root == null)
+        {
             return null;
         }
 
-        if(key < root.key){
+        if(key < root.key)
+        {
             root.left = delete(root.left, key);
         }
-        else if(key > root.key){
+        else if(key > root.key)
+        {
             root.right = delete(root.right, key);
         }
         else{
-            if(root.left == null){
+            if(root.left == null)
+            {
                 return root.right;
             }
-            else if(root.right == null){
+            else if(root.right == null)
+            {
                 return root.left;
             }
             root.right = delete(root.right, root.key);
